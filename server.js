@@ -5,64 +5,65 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articles ={
 
-var articleOne = {
-    
-    title: 'Article One | Shantanu',
-    heading: 'Article-One',
-    date: 'Feb 22,2017',
-    content: `    
-        <p>
+     articleOne:{
+        
+         title: 'Article One | Shantanu',
+         heading: 'Article-One',
+         date: 'Feb 22,2017',
+         content: `    
+            <p>
+                
+                This is the content for my first article..This is the content for my first article..
+                This is the content for my first article..
+                This is the content for my first article..This is the content for my first article..
+            </p>
             
-            This is the content for my first article..This is the content for my first article..
-            This is the content for my first article..
-            This is the content for my first article..This is the content for my first article..
-        </p>
-        
-         <p>
+             <p>
+                
+                This is the content for my first article..This is the content for my first article..
+                This is the content for my first article..
+                This is the content for my first article..This is the content for my first article..
+            </p>
             
-            This is the content for my first article..This is the content for my first article..
-            This is the content for my first article..
-            This is the content for my first article..This is the content for my first article..
-        </p>
-        
-         <p>
+             <p>
+                
+                This is the content for my first article..This is the content for my first article..
+                This is the content for my first article..
+                This is the content for my first article..This is the content for my first article..
+            </p> `
             
-            This is the content for my first article..This is the content for my first article..
-            This is the content for my first article..
-            This is the content for my first article..This is the content for my first article..
-        </p> `
         
+    },
     
-}
-
-
-var articleTwo = {
     
-    title: 'Article Two | Shantanu',
-    heading: 'Article-Two',
-    date: 'Feb 22,2017',
-    content: `    
-        <p>
-            This is the content for my two article..
-        </p> `
+     articleTwo : {
         
-    
-}
-
-var articleThree = {
-    
-    title: 'Article Three | Shantanu',
-    heading: 'Article-Three',
-    date: 'Feb 22,2017',
-    content: `    
-        <p>
-            This is the content for my third article..
-         
-        </p> `
+         title: 'Article Two | Shantanu',
+         heading: 'Article-Two',
+        date: 'Feb 22,2017',
+        content: `    
+            <p>
+                This is the content for my two article..
+            </p> `
+            
         
+    },
     
-}
+     articleThree : {
+        
+        title: 'Article Three | Shantanu',
+        heading: 'Article-Three',
+        date: 'Feb 22,2017',
+        content: `    
+            <p>
+                This is the content for my third article..
+             
+            </p> `
+    },       
+        
+};
 
 function createTemplate(data){
     
