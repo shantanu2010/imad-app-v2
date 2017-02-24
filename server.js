@@ -37,6 +37,33 @@ var articleOne = {
 }
 
 
+var articleTwo = {
+    
+    title: 'Article Two | Shantanu',
+    heading: 'Article-Two',
+    date: 'Feb 22,2017',
+    content: `    
+        <p>
+            This is the content for my two article..
+        </p> `
+        
+    
+}
+
+var articleThree = {
+    
+    title: 'Article Three | Shantanu',
+    heading: 'Article-Three',
+    date: 'Feb 22,2017',
+    content: `    
+        <p>
+            This is the content for my third article..
+         
+        </p> `
+        
+    
+}
+
 function createTemplate(data){
     
     
@@ -112,12 +139,12 @@ app.get('/article-one',function(req , res){
 
 app.get('/article-two',function(req , res){
     
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three',function(req , res){
     
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+    res.send(createTemplate(articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
