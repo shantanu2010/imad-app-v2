@@ -5,6 +5,20 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var Pool = require('pg').Pool;
+
+
+var config = {
+    
+    user: 'shantanu2010',
+    database: 'shantanu2010',
+    host: 'db.imad.hasura.io',
+    port:'5432',
+    password:process.env.DB_PASSWORD
+     
+};
+
+
 var articles = {
 
      'article-one':{
@@ -130,6 +144,27 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool(config);
+
+app.get('/test-db', function(req,res){
+    
+  // make a select request and get a response  
+  
+  pool.query('SELECT * FROM TEST',function(err,result){
+      
+      if(err){
+          
+          res.status(500).send(err.toString());
+          
+      }
+      else{
+          
+          res.SEND(JSON.stringify(result));
+      }
+      
+  });
+    
+});
 
 var  counter = 0;
 app.get('/counter',function (req, res){
