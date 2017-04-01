@@ -14,7 +14,7 @@ var config = {
     database: 'shantanu2010',
     host: 'db.imad.hasura-app.io',
     port:'5432',
-    password:process.env.DB_PASSWORD
+    password:'db-shantanu2010-62827'//process.env.DB_PASSWORD
      
 };
 
