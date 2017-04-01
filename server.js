@@ -150,7 +150,7 @@ app.get('/test-db', function(req,res){
     
   // make a select request and get a response  
   
-  pool.query('SELECT * FROM TEST',function(err,result){
+  pool.query('SELECT * FROM test',function(err,result){
       
       if(err){
           
